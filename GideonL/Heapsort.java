@@ -5,14 +5,14 @@ public class Heapsort {
 			swap(a, 0, a.length - 1 - k);
 			swapdown(a, 0, a.length - 1 - k);
 		}
-	}
+	} // O(nlogn)
 	private static void heapify(Integer[] a, int i){
 		if(2*i + 1 < a.length)
 			heapify(a, 2*i + 1);
 		if(2*i + 2 < a.length)
 			heapify(a, 2*i + 2);
 		swapdown(a, i, a.length);
-	}
+	} // O(nlogn)
 	private static void swapdown(Integer[] a, int i, int n){
 		int j = i;
 		if(2*i + 2 < n && a[2*i + 2] >= a[2*i + 1] && a[2*i + 2] > a[i])
@@ -22,10 +22,10 @@ public class Heapsort {
 		swap(a, i, j);
 		if(i != j)
 			swapdown(a, j, n);
-	}
+	} // O(logn)
 	private static void swap(Integer[] a, int i, int j){
 		Integer temp = a[i];
 		a[i] = a[j];
 		a[j] = temp;
-	}
+	} // O(1)
 }
